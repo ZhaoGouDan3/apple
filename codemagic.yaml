@@ -1,0 +1,16 @@
+# codemagic.yaml
+
+workflows:
+  main:
+    name: Main Workflow
+    environment:
+      flutter: stable
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build iOS
+        script: flutter build ios
+      - name: Run tests
+        script: flutter test
+    artifacts:
+      - build/ios/your_app_name.ipa
